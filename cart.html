@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Пример компонента-корзины</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src='lib.js'></script>
+    <script src='cart.js'></script>   
+    <style>
+        #slider, #form-brand{           
+            margin: 15px;
+        }
+        #slider-value{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span id='message'></span>
+        <a href='#' id='checkoutCart'>
+            <img src='Images/icons8-shopping-cart-25.png' alt='Ваша корзина'/>
+        </a>
+    </header>
+
+    <div id='modal-gray-layer'>
+        <div id='modal-dialog'>
+            <span class='modal-close'>X</span>
+            <h2>Корзина</h2>
+            <table id='table-cart'></table>    
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="left-side-bar">
+            <div id="slider"></div>
+            <div id='slider-value'></div>
+            <div id='form-brand'></div>
+        </div>
+        <div class="main-content">
+            <div class="goods-container">
+                <div class="goods-item">
+                    <img width="70%" src="https://i2.rozetka.ua/goods/818940/2528227_images_818940233.jpg" 
+                    alt="Электрочайник BOSCH TWK3A013" />
+                    <p>Электрочайник BOSCH TWK3A013</p>                    
+                    <div class="goods-desc">
+                        <span>799 грн</span>
+                        <a data-id='1' data-name='Электрочайник BOSCH TWK3A013' data-price='799' data-brand='BOSCH'
+                            data-img='https://i2.rozetka.ua/goods/818940/2528227_images_818940233.jpg' href="#">
+                        <img src="Images/icons8-shopping-cart-25.png" alt="Купить Электрочайник BOSCH TWK3A013" />
+                        </a>
+                    </div>
+                </div>
+                <div class="goods-item">
+                        <img width="70%" src="https://i2.rozetka.ua/goods/11675715/redmond_rk_m170s_white_images_11675715879.jpg" 
+                        alt="Электрочайник REDMOND RK-M170S White" />
+                        <p>Электрочайник REDMOND RK-M170S White</p>                    
+                        <div class="goods-desc">
+                            <span>2696 грн</span>
+                            <a data-id='2' data-name='Электрочайник REDMOND RK-M170S White' data-price='2696' data-brand='REDMOND'
+                                data-img='https://i2.rozetka.ua/goods/11675715/redmond_rk_m170s_white_images_11675715879.jpg' href="#">
+                            <img src="Images/icons8-shopping-cart-25.png" alt="Купить Электрочайник REDMOND RK-M170S White" />
+                            </a>
+                        </div>
+                </div>
+                <div class="goods-item">
+                        <img width="70%" src="https://i1.rozetka.ua/goods/1450775/4747904_images_1450775469.jpg" 
+                        alt="Электрочайник PHILIPS Daily Collection HD9334/11" />
+                        <p>Электрочайник PHILIPS Daily Collection HD9334/11</p>                    
+                        <div class="goods-desc">
+                            <span>619 грн</span>
+                            <a data-id='3' data-name='Электрочайник PHILIPS Daily Collection HD9334/11' data-price='619' data-brand='PHILIPS'
+                                data-img='https://i1.rozetka.ua/goods/1450775/4747904_images_1450775469.jpg' href="#">
+                            <img src="Images/icons8-shopping-cart-25.png" alt="Купить Электрочайник PHILIPS Daily Collection HD9334/11" />
+                            </a>
+                        </div>
+                </div>
+                <div class="goods-item">
+                        <img width="70%" src="https://i1.rozetka.ua/goods/4705289/gorenje_k17_we_images_4705289048.jpg" 
+                        alt="Электрочайник GORENJE K 17 WE" />
+                        <p>Электрочайник GORENJE K 17 WE</p>                    
+                        <div class="goods-desc">
+                            <span>599 грн</span>
+                            <a data-id='4' data-name='Электрочайник GORENJE K 17 WE' data-price='599' data-brand='GORENJE'
+                                data-img='https://i1.rozetka.ua/goods/4705289/gorenje_k17_we_images_4705289048.jpg' href="#">
+                            <img src="Images/icons8-shopping-cart-25.png" alt="Купить Электрочайник GORENJE K 17 WE" />
+                            </a>
+                        </div>
+                </div>
+                <div class="goods-item">
+                        <img width="70%" src="https://i2.rozetka.ua/goods/3528726/philips_hd9355_90_images_3528726143.jpg" 
+                        alt="Электрочайник PHILIPS Viva Collection HD9355/90" />
+                        <p>Электрочайник PHILIPS Viva Collection HD9355/90"</p>                    
+                        <div class="goods-desc">
+                            <span>1699 грн</span>
+                            <a data-id='5' data-name='Электрочайник PHILIPS Viva Collection HD9355/90' data-price='1699' data-brand='PHILIPS'
+                                data-img='https://i2.rozetka.ua/goods/3528726/philips_hd9355_90_images_3528726143.jpg' href="#">
+                            <img src="Images/icons8-shopping-cart-25.png" alt="Купить Электрочайник PHILIPS Viva Collection HD9355/90" />
+                            </a>
+                        </div>
+                </div>
+                <div class="goods-item">
+                        <img width="70%" src="https://i1.rozetka.ua/goods/963260/14738_images_963260779.jpg" 
+                        alt="Электрочайник PHILIPS Daily Collection HD4646/00 Белый" />
+                        <p>Электрочайник PHILIPS Daily Collection HD4646/00 Белый</p>                    
+                        <div class="goods-desc">
+                            <span>759 грн</span>
+                            <a data-id='6' data-name='Электрочайник PHILIPS Daily Collection HD4646/00 Белый' data-price='759' data-brand="PHILIPS" 
+                                data-img='https://i1.rozetka.ua/goods/963260/14738_images_963260779.jpg' href="#">
+                            <img src="Images/icons8-shopping-cart-25.png" alt="Купить Электрочайник PHILIPS Daily Collection HD4646/00 Белый" />
+                            </a>
+                        </div>
+                </div>
+            </div>          
+        </div>
+    </div>
+    <footer>footer</footer>
+    <script>
+      
+        // --- use of own js component Cart (without jQuery)
+        // Использование js компонента корзины
+        // Данные для метода init
+        var buttonsAddToCart = []; // массив тегов/элементов, на которые нужно повесить
+        // функционал добавления товаров в корзину
+        // в нащем случае это элеметы a
+        var goodsItems = document.querySelectorAll('.goods-item');
+        for(var i=0; i<goodsItems.length; i++){
+            buttonsAddToCart[i] = goodsItems[i].getElementsByTagName('a')[0];
+        }
+        var tagForMessage = document.getElementById('message'); // получение элемента для отображения сообщений
+        var tagCheckoutCart = document.getElementById('checkoutCart'); // получения элемента, клик по которому показывает корзину
+
+        Cart.init({buttonsAddToCart, tagForMessage, tagCheckoutCart}); // инициализация компонета данными
+        // ---------------------------------------------
+        
+        
+        
+        
+        
+        
+        // --- use of Jquery UI component Slider
+        function getMinMaxPrice(){
+            var min = max = $('a[data-price]').first().data('price');
+            $('a[data-price]').each(function(ind, elem){
+                if($(elem).data('price') < min){
+                    min = $(elem).data('price')
+                }
+                if($(elem).data('price') > max){
+                    max = $(elem).data('price')
+                }
+            });   
+            return {min: min, max: max};                  
+        }
+
+        function onlyUnique(value, index, self) { 
+            return self.indexOf(value) === index;
+        } 
+
+        var stateBrands = [];
+
+        function showPriceForm(){    
+            $('#form-brand').html('');     
+            $('#form-brand').append($('<form>'));
+            var brands = [];
+
+            $('a[data-price]').each(function(ind, elem){
+                if($(elem).closest('.goods-item').is(':visible')) {
+                    var brand = $(elem).data('brand');  
+                    brands.push(brand);                       
+                }
+            }); 
+
+            brands = brands.filter( onlyUnique );
+
+            brands.forEach(function(value){
+                var input = $("<div><input type='checkbox' checked name='" 
+                    + value + "'/> "+ value + "</div>");
+                    $('form').append(input);   
+                stateBrands.push({brand: value, checked: true});          
+            });      
+
+            $('input[type="checkbox"]').delegate($('input[type="checkbox"]'), 
+            'change', function(e){
+                //console.log(e.target.name + ': ' + e.target.checked);
+                for(var i=0; i<stateBrands.length; i++){
+                    if(stateBrands[i].brand === e.target.name){
+                            stateBrands[i].checked = e.target.checked;
+                            $('a[data-brand]').each(function(ind, elem){
+                            var brand = $(elem).data('brand');                            
+                            if(brand === stateBrands[i].brand){
+                                stateBrands[i].checked ? 
+                                    $(elem).closest('.goods-item').show() : 
+                                        $(elem).closest('.goods-item').hide(); 
+                            }
+                           
+                        });
+                    }
+                }
+                showByBrand(e);              
+            });     
+        }
+
+        $(function() {
+            showPriceForm();
+            var minMax = getMinMaxPrice();
+            $( "#slider" ).slider({
+            min: minMax.min,
+            max: minMax.max,
+            values: [ minMax.min, minMax.max ],
+            slide: function(e, ui){
+                $('#slider-value').html(ui.values[0] 
+                + '...' + ui.values[1]);               
+
+                $('a[data-price]').each(function(ind, elem){
+                    var price = $(elem).data('price');                                 
+                    if(price >= ui.values[0] && price <= ui.values[1]){
+                        $(elem).closest('.goods-item').show();                      
+                    }
+                    else{
+                        $(elem).closest('.goods-item').hide();                      
+                    }                                  
+                
+                });
+
+                showPriceForm();                  
+                
+            }});         
+                         
+        });
+        // ------------------------------------------------------------
+   
+    </script>
+</body>
+</html>

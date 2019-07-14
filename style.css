@@ -1,0 +1,92 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header, footer{
+    max-width: 1500px;
+    margin: 0 auto;
+    background-color: antiquewhite;
+}
+header{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#message{
+    margin-right:10px;
+    padding: 3px;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+    color: #3c763d;
+    background-color: #dff0d8;
+    display: none;           
+}
+
+.main{
+    display: flex;
+    max-width: 1500px;
+    margin: 0 auto; /*центрирование по вертикали - при ширине экрана
+    более 1500px добавляются слева и справа пустые пространства*/
+}
+.left-side-bar{
+    width: 300px;
+    flex-direction: column;
+    background-color:cornsilk;
+}
+.main-content{
+    width: 100%;
+    flex-direction: column;           
+}
+.goods-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;           
+}
+.goods-item{
+    padding: 5px;
+    border: 1px solid lightgray;         
+}
+.goods-desc{
+    display: flex; 
+    align-items: center;
+}
+.goods-item div span{
+    background-color: blanchedalmond;
+    color: red;
+    padding: 4px;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+@media screen and (max-width: 600px){
+    .goods-item{
+        width:100%;                
+    } 
+    .left-side-bar{
+        display: none;
+    }
+}
+@media screen and (min-width: 601px) and (max-width: 780px){
+    .goods-item{
+        width:50%;                
+    } 
+    .left-side-bar{
+        display: none;
+    }
+}
+@media screen and (min-width: 781px) and (max-width: 960px){
+    .goods-item{
+        width:33.33%;
+    } 
+}
+@media screen and (min-width: 961px) and (max-width: 1200px){
+    .goods-item{
+        width:25%;
+    } 
+}
+@media screen and (min-width: 1201px){
+    .goods-item{
+        width:20%;
+    } 
+}
